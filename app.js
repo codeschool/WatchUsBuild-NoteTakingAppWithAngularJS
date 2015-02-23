@@ -1,4 +1,4 @@
-var app = require("./server/modules/routes");
+var app = require("./server/routes");
 
 // Start the server
 var server = app.listen(8000, function() {
