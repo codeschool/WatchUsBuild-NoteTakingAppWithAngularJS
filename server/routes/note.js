@@ -39,10 +39,10 @@ module.exports = function(app) {
 
   app.get('/notes/:id', function(req, res) {
     var noteId = parseInt(req.param('id'), 10);
-    var selectedNote = _.result(_.find(notes, function(note){
+    var selectedNote = _.find(notes, function(note){
       return note.id === noteId;
-    }), {});
+    });
 
-    res.json(selectedNote);
+    res.json(selectedNote || {});
   });
 };

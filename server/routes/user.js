@@ -24,10 +24,10 @@ module.exports = function(app){
   app.get('/users/:id', function(req, res){
     var userId = parseInt(req.params.id, 10);
 
-    var selectedUser = _.result(_.find(users, function(user){
+    var selectedUser = _.find(users, function(user){
       return user.id === userId;
-    }), {});
+    });
 
-    res.json(selectedUser);
+    res.json(selectedUser || {});
   });
 };
