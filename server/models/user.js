@@ -16,20 +16,13 @@ var users = [
   {"id": 13, "username": "AlyssaNicoll", "name": "Alyssa Nicoll", "bio": "Code School Teacher. Angular Lover. Scuba Diver.", "twitter_handle": "@AlyssaNicoll", "site": "alyssa.io"}
 ];
 
-var User = require('../models/user');
-
-module.exports = function(app){
-  app.get('/users', function(req, res){
-    res.json(User.all());
-  });
-
-  app.get('/users/:id', function(req, res){
-    var userId = parseInt(req.params.id, 10);
-
-    // var selectedUser = _.find(users, function(user){
-    //   return user.id === userId;
-    // });
-
-    res.json(User.get(userId) || {});
-  });
-};
+module.exports = {
+  get: function(id) {
+    return _.find(users, function(user){
+      return user.id === id;
+    });
+  },
+  all: function() {
+    return users;
+  }
+}
