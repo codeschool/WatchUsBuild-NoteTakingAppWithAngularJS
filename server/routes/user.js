@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var users = [
   {"id": 1, "username": "zeldman", "name": "Jeffery Zeldman", "bio": "Founder, Happy Cog studios. Author, Designing With Web Standards. Publisher, A List Apart, A Book Apart.", "twitter_handle": "@zeldman", "site": "zeldman.com"},
   {"id": 2, "username": "b_green", "name": "Brad Green", "bio": "I work at Google where I manage AngularJS and Google's internal sales productivity applications. I'm a dad.", "twitter_handle": "@bradlygreen", "site": "google.com/+BradGreen"},
@@ -21,7 +23,7 @@ module.exports = function(app){
 
   app.get('/users/:id', function(req, res){
     var userId = parseInt(req.params.id, 10);
-    
+
     var selectedUser = _.result(_.find(users, function(user){
       return user.id === userId;
     }), {});

@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var notes = [
   {"id":1 ,"UserId": 13, "CategoryId": 8, "link" :"https://www.youtube.com/watch?feature=player_detailpage&v=ZhfUv0spHCY#t=1870", "description": "NgModel Best Practice", "content" : "Always use dot syntax when using NgModel! Treat Scope as read-only in templates & write-only in controllers. The purpose of the scope is to refer to the model, not be the model. The model is your javascript objects. When doing bidirectional binding with ngModel make sure you don't bind directly to the scope properties. This will cause unexpected behavior in the child scopes.", "title" : "NgModel BP", "icon" : "basic info"},
   {"id":2 ,"UserId": 2, "CategoryId": 3, "link" : "https://docs.angularjs.org/api/ng#directive", "description" : "Markers on a **DOM element** that tell AngularJS's HTML compiler `$compile` to attach a specified behavior to that DOM element.", "title" : "Directives", "icon" : "code", "content": "Markers on a **DOM element**"},
