@@ -1,0 +1,13 @@
+<h1>Notes <a class="btn btn-default" href="#/notes/new">New Note</a></h1>
+<div class="form-group">
+  Search: <input type='text' ng-model="search.input.$">
+</div>
+<nw-category-selector ng-model="search.category"></nw-category-selector>
+
+<div class="row">
+  <div ng-repeat="note in notes | categoryFilter:search.category | filter:search.input" class="col-sm-6">
+    <h2><a title="{{note.user.name}}" ng-href="#/notes/{{note.id}}">{{note.title}}</a></h2>
+    <p>{{note.description}}</p>
+    <p><span class="label label-info">{{note.category.name}}</span></p>
+  </div>
+</div>
