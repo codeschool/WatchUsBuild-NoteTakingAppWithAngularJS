@@ -6,13 +6,13 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <label for="title">Category</label>
-    <select ng-options="category.id as category.name for category in categories" ng-model="note.categoryId"></select>
+    <label for="category">Category</label>
+    <select id="category" ng-options="category.id as category.name for category in categories" ng-model="note.categoryId"></select>
   </fieldset>
 
   <fieldset class="form-group">
-    <label for="title">User</label>
-    <select ng-options="user.id as user.name for user in users" ng-model="note.userId"></select>
+    <label for="user">User</label>
+    <select id="user" ng-options="user.id as user.name for user in users" ng-model="note.userId"></select>
   </fieldset>
 
   <fieldset class="form-group">
